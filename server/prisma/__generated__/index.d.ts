@@ -1135,10 +1135,10 @@ export namespace Prisma {
     id: string | null
     email: string | null
     password: string | null
-    desplayName: string | null
+    displayName: string | null
     picture: string | null
     role: $Enums.UserRole | null
-    isVerifed: boolean | null
+    isVerified: boolean | null
     isTwoFactorEnabled: boolean | null
     method: $Enums.AuthMethod | null
     createdAt: Date | null
@@ -1149,10 +1149,10 @@ export namespace Prisma {
     id: string | null
     email: string | null
     password: string | null
-    desplayName: string | null
+    displayName: string | null
     picture: string | null
     role: $Enums.UserRole | null
-    isVerifed: boolean | null
+    isVerified: boolean | null
     isTwoFactorEnabled: boolean | null
     method: $Enums.AuthMethod | null
     createdAt: Date | null
@@ -1163,10 +1163,10 @@ export namespace Prisma {
     id: number
     email: number
     password: number
-    desplayName: number
+    displayName: number
     picture: number
     role: number
-    isVerifed: number
+    isVerified: number
     isTwoFactorEnabled: number
     method: number
     createdAt: number
@@ -1179,10 +1179,10 @@ export namespace Prisma {
     id?: true
     email?: true
     password?: true
-    desplayName?: true
+    displayName?: true
     picture?: true
     role?: true
-    isVerifed?: true
+    isVerified?: true
     isTwoFactorEnabled?: true
     method?: true
     createdAt?: true
@@ -1193,10 +1193,10 @@ export namespace Prisma {
     id?: true
     email?: true
     password?: true
-    desplayName?: true
+    displayName?: true
     picture?: true
     role?: true
-    isVerifed?: true
+    isVerified?: true
     isTwoFactorEnabled?: true
     method?: true
     createdAt?: true
@@ -1207,10 +1207,10 @@ export namespace Prisma {
     id?: true
     email?: true
     password?: true
-    desplayName?: true
+    displayName?: true
     picture?: true
     role?: true
-    isVerifed?: true
+    isVerified?: true
     isTwoFactorEnabled?: true
     method?: true
     createdAt?: true
@@ -1294,10 +1294,10 @@ export namespace Prisma {
     id: string
     email: string
     password: string
-    desplayName: string
+    displayName: string
     picture: string | null
     role: $Enums.UserRole
-    isVerifed: boolean
+    isVerified: boolean
     isTwoFactorEnabled: boolean
     method: $Enums.AuthMethod
     createdAt: Date
@@ -1325,10 +1325,10 @@ export namespace Prisma {
     id?: boolean
     email?: boolean
     password?: boolean
-    desplayName?: boolean
+    displayName?: boolean
     picture?: boolean
     role?: boolean
-    isVerifed?: boolean
+    isVerified?: boolean
     isTwoFactorEnabled?: boolean
     method?: boolean
     createdAt?: boolean
@@ -1341,10 +1341,10 @@ export namespace Prisma {
     id?: boolean
     email?: boolean
     password?: boolean
-    desplayName?: boolean
+    displayName?: boolean
     picture?: boolean
     role?: boolean
-    isVerifed?: boolean
+    isVerified?: boolean
     isTwoFactorEnabled?: boolean
     method?: boolean
     createdAt?: boolean
@@ -1355,10 +1355,10 @@ export namespace Prisma {
     id?: boolean
     email?: boolean
     password?: boolean
-    desplayName?: boolean
+    displayName?: boolean
     picture?: boolean
     role?: boolean
-    isVerifed?: boolean
+    isVerified?: boolean
     isTwoFactorEnabled?: boolean
     method?: boolean
     createdAt?: boolean
@@ -1369,17 +1369,17 @@ export namespace Prisma {
     id?: boolean
     email?: boolean
     password?: boolean
-    desplayName?: boolean
+    displayName?: boolean
     picture?: boolean
     role?: boolean
-    isVerifed?: boolean
+    isVerified?: boolean
     isTwoFactorEnabled?: boolean
     method?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "password" | "desplayName" | "picture" | "role" | "isVerifed" | "isTwoFactorEnabled" | "method" | "createdAt" | "updatedAt", ExtArgs["result"]["user"]>
+  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "password" | "displayName" | "picture" | "role" | "isVerified" | "isTwoFactorEnabled" | "method" | "createdAt" | "updatedAt", ExtArgs["result"]["user"]>
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     accounts?: boolean | User$accountsArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
@@ -1396,10 +1396,10 @@ export namespace Prisma {
       id: string
       email: string
       password: string
-      desplayName: string
+      displayName: string
       picture: string | null
       role: $Enums.UserRole
-      isVerifed: boolean
+      isVerified: boolean
       isTwoFactorEnabled: boolean
       method: $Enums.AuthMethod
       createdAt: Date
@@ -1831,10 +1831,10 @@ export namespace Prisma {
     readonly id: FieldRef<"User", 'String'>
     readonly email: FieldRef<"User", 'String'>
     readonly password: FieldRef<"User", 'String'>
-    readonly desplayName: FieldRef<"User", 'String'>
+    readonly displayName: FieldRef<"User", 'String'>
     readonly picture: FieldRef<"User", 'String'>
     readonly role: FieldRef<"User", 'UserRole'>
-    readonly isVerifed: FieldRef<"User", 'Boolean'>
+    readonly isVerified: FieldRef<"User", 'Boolean'>
     readonly isTwoFactorEnabled: FieldRef<"User", 'Boolean'>
     readonly method: FieldRef<"User", 'AuthMethod'>
     readonly createdAt: FieldRef<"User", 'DateTime'>
@@ -4445,10 +4445,10 @@ export namespace Prisma {
     id: 'id',
     email: 'email',
     password: 'password',
-    desplayName: 'desplayName',
+    displayName: 'displayName',
     picture: 'picture',
     role: 'role',
-    isVerifed: 'isVerifed',
+    isVerified: 'isVerified',
     isTwoFactorEnabled: 'isTwoFactorEnabled',
     method: 'method',
     createdAt: 'createdAt',
@@ -4628,10 +4628,10 @@ export namespace Prisma {
     id?: StringFilter<"User"> | string
     email?: StringFilter<"User"> | string
     password?: StringFilter<"User"> | string
-    desplayName?: StringFilter<"User"> | string
+    displayName?: StringFilter<"User"> | string
     picture?: StringNullableFilter<"User"> | string | null
     role?: EnumUserRoleFilter<"User"> | $Enums.UserRole
-    isVerifed?: BoolFilter<"User"> | boolean
+    isVerified?: BoolFilter<"User"> | boolean
     isTwoFactorEnabled?: BoolFilter<"User"> | boolean
     method?: EnumAuthMethodFilter<"User"> | $Enums.AuthMethod
     createdAt?: DateTimeFilter<"User"> | Date | string
@@ -4643,10 +4643,10 @@ export namespace Prisma {
     id?: SortOrder
     email?: SortOrder
     password?: SortOrder
-    desplayName?: SortOrder
+    displayName?: SortOrder
     picture?: SortOrderInput | SortOrder
     role?: SortOrder
-    isVerifed?: SortOrder
+    isVerified?: SortOrder
     isTwoFactorEnabled?: SortOrder
     method?: SortOrder
     createdAt?: SortOrder
@@ -4661,10 +4661,10 @@ export namespace Prisma {
     OR?: UserWhereInput[]
     NOT?: UserWhereInput | UserWhereInput[]
     password?: StringFilter<"User"> | string
-    desplayName?: StringFilter<"User"> | string
+    displayName?: StringFilter<"User"> | string
     picture?: StringNullableFilter<"User"> | string | null
     role?: EnumUserRoleFilter<"User"> | $Enums.UserRole
-    isVerifed?: BoolFilter<"User"> | boolean
+    isVerified?: BoolFilter<"User"> | boolean
     isTwoFactorEnabled?: BoolFilter<"User"> | boolean
     method?: EnumAuthMethodFilter<"User"> | $Enums.AuthMethod
     createdAt?: DateTimeFilter<"User"> | Date | string
@@ -4676,10 +4676,10 @@ export namespace Prisma {
     id?: SortOrder
     email?: SortOrder
     password?: SortOrder
-    desplayName?: SortOrder
+    displayName?: SortOrder
     picture?: SortOrderInput | SortOrder
     role?: SortOrder
-    isVerifed?: SortOrder
+    isVerified?: SortOrder
     isTwoFactorEnabled?: SortOrder
     method?: SortOrder
     createdAt?: SortOrder
@@ -4696,10 +4696,10 @@ export namespace Prisma {
     id?: StringWithAggregatesFilter<"User"> | string
     email?: StringWithAggregatesFilter<"User"> | string
     password?: StringWithAggregatesFilter<"User"> | string
-    desplayName?: StringWithAggregatesFilter<"User"> | string
+    displayName?: StringWithAggregatesFilter<"User"> | string
     picture?: StringNullableWithAggregatesFilter<"User"> | string | null
     role?: EnumUserRoleWithAggregatesFilter<"User"> | $Enums.UserRole
-    isVerifed?: BoolWithAggregatesFilter<"User"> | boolean
+    isVerified?: BoolWithAggregatesFilter<"User"> | boolean
     isTwoFactorEnabled?: BoolWithAggregatesFilter<"User"> | boolean
     method?: EnumAuthMethodWithAggregatesFilter<"User"> | $Enums.AuthMethod
     createdAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
@@ -4839,10 +4839,10 @@ export namespace Prisma {
     id?: string
     email: string
     password: string
-    desplayName: string
+    displayName: string
     picture?: string | null
     role?: $Enums.UserRole
-    isVerifed?: boolean
+    isVerified?: boolean
     isTwoFactorEnabled?: boolean
     method: $Enums.AuthMethod
     createdAt?: Date | string
@@ -4854,10 +4854,10 @@ export namespace Prisma {
     id?: string
     email: string
     password: string
-    desplayName: string
+    displayName: string
     picture?: string | null
     role?: $Enums.UserRole
-    isVerifed?: boolean
+    isVerified?: boolean
     isTwoFactorEnabled?: boolean
     method: $Enums.AuthMethod
     createdAt?: Date | string
@@ -4869,10 +4869,10 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
-    desplayName?: StringFieldUpdateOperationsInput | string
+    displayName?: StringFieldUpdateOperationsInput | string
     picture?: NullableStringFieldUpdateOperationsInput | string | null
     role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
-    isVerifed?: BoolFieldUpdateOperationsInput | boolean
+    isVerified?: BoolFieldUpdateOperationsInput | boolean
     isTwoFactorEnabled?: BoolFieldUpdateOperationsInput | boolean
     method?: EnumAuthMethodFieldUpdateOperationsInput | $Enums.AuthMethod
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -4884,10 +4884,10 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
-    desplayName?: StringFieldUpdateOperationsInput | string
+    displayName?: StringFieldUpdateOperationsInput | string
     picture?: NullableStringFieldUpdateOperationsInput | string | null
     role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
-    isVerifed?: BoolFieldUpdateOperationsInput | boolean
+    isVerified?: BoolFieldUpdateOperationsInput | boolean
     isTwoFactorEnabled?: BoolFieldUpdateOperationsInput | boolean
     method?: EnumAuthMethodFieldUpdateOperationsInput | $Enums.AuthMethod
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -4899,10 +4899,10 @@ export namespace Prisma {
     id?: string
     email: string
     password: string
-    desplayName: string
+    displayName: string
     picture?: string | null
     role?: $Enums.UserRole
-    isVerifed?: boolean
+    isVerified?: boolean
     isTwoFactorEnabled?: boolean
     method: $Enums.AuthMethod
     createdAt?: Date | string
@@ -4913,10 +4913,10 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
-    desplayName?: StringFieldUpdateOperationsInput | string
+    displayName?: StringFieldUpdateOperationsInput | string
     picture?: NullableStringFieldUpdateOperationsInput | string | null
     role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
-    isVerifed?: BoolFieldUpdateOperationsInput | boolean
+    isVerified?: BoolFieldUpdateOperationsInput | boolean
     isTwoFactorEnabled?: BoolFieldUpdateOperationsInput | boolean
     method?: EnumAuthMethodFieldUpdateOperationsInput | $Enums.AuthMethod
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -4927,10 +4927,10 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
-    desplayName?: StringFieldUpdateOperationsInput | string
+    displayName?: StringFieldUpdateOperationsInput | string
     picture?: NullableStringFieldUpdateOperationsInput | string | null
     role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
-    isVerifed?: BoolFieldUpdateOperationsInput | boolean
+    isVerified?: BoolFieldUpdateOperationsInput | boolean
     isTwoFactorEnabled?: BoolFieldUpdateOperationsInput | boolean
     method?: EnumAuthMethodFieldUpdateOperationsInput | $Enums.AuthMethod
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -5155,10 +5155,10 @@ export namespace Prisma {
     id?: SortOrder
     email?: SortOrder
     password?: SortOrder
-    desplayName?: SortOrder
+    displayName?: SortOrder
     picture?: SortOrder
     role?: SortOrder
-    isVerifed?: SortOrder
+    isVerified?: SortOrder
     isTwoFactorEnabled?: SortOrder
     method?: SortOrder
     createdAt?: SortOrder
@@ -5169,10 +5169,10 @@ export namespace Prisma {
     id?: SortOrder
     email?: SortOrder
     password?: SortOrder
-    desplayName?: SortOrder
+    displayName?: SortOrder
     picture?: SortOrder
     role?: SortOrder
-    isVerifed?: SortOrder
+    isVerified?: SortOrder
     isTwoFactorEnabled?: SortOrder
     method?: SortOrder
     createdAt?: SortOrder
@@ -5183,10 +5183,10 @@ export namespace Prisma {
     id?: SortOrder
     email?: SortOrder
     password?: SortOrder
-    desplayName?: SortOrder
+    displayName?: SortOrder
     picture?: SortOrder
     role?: SortOrder
-    isVerifed?: SortOrder
+    isVerified?: SortOrder
     isTwoFactorEnabled?: SortOrder
     method?: SortOrder
     createdAt?: SortOrder
@@ -5749,10 +5749,10 @@ export namespace Prisma {
     id?: string
     email: string
     password: string
-    desplayName: string
+    displayName: string
     picture?: string | null
     role?: $Enums.UserRole
-    isVerifed?: boolean
+    isVerified?: boolean
     isTwoFactorEnabled?: boolean
     method: $Enums.AuthMethod
     createdAt?: Date | string
@@ -5763,10 +5763,10 @@ export namespace Prisma {
     id?: string
     email: string
     password: string
-    desplayName: string
+    displayName: string
     picture?: string | null
     role?: $Enums.UserRole
-    isVerifed?: boolean
+    isVerified?: boolean
     isTwoFactorEnabled?: boolean
     method: $Enums.AuthMethod
     createdAt?: Date | string
@@ -5793,10 +5793,10 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
-    desplayName?: StringFieldUpdateOperationsInput | string
+    displayName?: StringFieldUpdateOperationsInput | string
     picture?: NullableStringFieldUpdateOperationsInput | string | null
     role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
-    isVerifed?: BoolFieldUpdateOperationsInput | boolean
+    isVerified?: BoolFieldUpdateOperationsInput | boolean
     isTwoFactorEnabled?: BoolFieldUpdateOperationsInput | boolean
     method?: EnumAuthMethodFieldUpdateOperationsInput | $Enums.AuthMethod
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -5807,10 +5807,10 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
-    desplayName?: StringFieldUpdateOperationsInput | string
+    displayName?: StringFieldUpdateOperationsInput | string
     picture?: NullableStringFieldUpdateOperationsInput | string | null
     role?: EnumUserRoleFieldUpdateOperationsInput | $Enums.UserRole
-    isVerifed?: BoolFieldUpdateOperationsInput | boolean
+    isVerified?: BoolFieldUpdateOperationsInput | boolean
     isTwoFactorEnabled?: BoolFieldUpdateOperationsInput | boolean
     method?: EnumAuthMethodFieldUpdateOperationsInput | $Enums.AuthMethod
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string

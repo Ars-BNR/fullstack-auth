@@ -14,12 +14,12 @@ model User {
   email    String @unique
   password String
 
-  desplayName String
+  displayName String
   picture     String?
 
   role UserRole @default(REGULAR)
 
-  isVerifed          Boolean @default(false) @map("is_verified")
+  isVerified         Boolean @default(false) @map("is_verified")
   isTwoFactorEnabled Boolean @default(false) @map("is_two_factor_enabled")
 
   method AuthMethod
