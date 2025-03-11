@@ -7,6 +7,7 @@ import { ProviderModule } from './auth/provider/provider.module'
 import { IS_DEV_ENV } from './libs/common/utils/is-dev.util'
 import { PrismaModule } from './prisma/prisma.module'
 import { UserModule } from './user/user.module'
+import { TwoFactorAuthModule } from './auth/two-factor-auth/two-factor-auth.module';
 
 @Module({
 	imports: [
@@ -19,7 +20,8 @@ import { UserModule } from './user/user.module'
 		UserModule,
 		ProviderModule,
 		EmailConfirmationModule,
-		PasswordRecoveryModule
+		PasswordRecoveryModule,
+		TwoFactorAuthModule
 	]
 })
 export class AppModule {}

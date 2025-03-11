@@ -1,4 +1,4 @@
-import { IsEmail, IsNotEmpty, IsString, MinLength } from 'class-validator'
+import { IsEmail, IsNotEmpty, IsOptional, IsString, MinLength } from 'class-validator'
 
 export class LoginDto {
 	@IsString({ message: 'Должно быть строкой' })
@@ -12,4 +12,8 @@ export class LoginDto {
 		message: 'Слишком короткий пароль'
 	})
 	password: string
+
+	@IsOptional()
+	@IsString()
+	code:string
 }

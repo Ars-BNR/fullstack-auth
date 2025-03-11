@@ -15,6 +15,7 @@ import { LoginDto } from './dto/login.dto'
 import { RegisterDto } from './dto/register.dto'
 import { EmailConfirmationService } from './email-confirmation/email-confirmation.service'
 import { ProviderService } from './provider/provider.service'
+import { TwoFactorAuthService } from './two-factor-auth/two-factor-auth.service'
 
 @Injectable()
 export class AuthService {
@@ -23,7 +24,8 @@ export class AuthService {
 		private readonly userService: UserService,
 		private readonly configService: ConfigService,
 		private readonly providerService: ProviderService,
-		private readonly emailConfirmationService: EmailConfirmationService
+		private readonly emailConfirmationService: EmailConfirmationService,
+		private readonly twoFactorAuthService: TwoFactorAuthService
 	) {}
 
 	public async register(req: Request, dto: RegisterDto) {
@@ -44,7 +46,7 @@ export class AuthService {
 			false
 		)
 
-		await this.emailConfirmationService.sendVerificationToken(newUser)
+		await this.emailConfirmationService.sendVerificationToken(newUser.email)
 
 		return {
 			message:
@@ -66,9 +68,25 @@ export class AuthService {
 		}
 
 		if (!user.isVerified) {
-			await this.emailConfirmationService.sendVerificationToken(user)
+			await this.emailConfirmationService.sendVerificationToken(user.email)
 			throw new UnauthorizedException(
 				'Ваш email не подтвержден. Пожалуйста, проверьте вашу почту и подтвердите адрес.'
+			)
+		}
+		
+		if(user.isTwoFactorEnabled){
+			if(dto.code){
+				await this.twoFactorAuthService.sendTwoFactorToken(user.email)
+
+				return {
+					message:
+						'Проверьте вашу почту. Требуется код двухфакторной аутентификации.'
+				}
+			}
+
+			await this.twoFactorAuthService.validateTwoFactorToken(
+				user.email,
+				dto.code
 			)
 		}
 
