@@ -1,7 +1,6 @@
 'use client'
 
-import { Toaster } from "sonner"
-// import { Toaster } from '../components/ui'
+import { Toaster } from '../components/ui'
 
 /**
  * Провайдер для отображения уведомлений.

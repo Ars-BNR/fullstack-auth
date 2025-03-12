@@ -5,8 +5,16 @@ import { useForm } from "react-hook-form";
 import { AuthWrapper } from "./AuthWrapper";
 import { RegisterSchema, TypeRegisterSchema } from "../schemes";
 import { Button, Form, FormControl, FormField, FormItem, FormLabel, FormMessage, Input } from "@/shared/components/ui";
+import { useTheme } from "next-themes";
+import { useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
+import { toast } from 'sonner'
+import { useRegisterMutation } from "../hooks";
 
 export function RegisterForm(){
+    const {theme} = useTheme()
+    const [recaptchaValue, setRecaptchaValue] = useState<string | null>(null)
+    
     const form = useForm<TypeRegisterSchema>({
         resolver: zodResolver(RegisterSchema),
         defaultValues:{
@@ -16,9 +24,15 @@ export function RegisterForm(){
             passwordRepeat:""
         }
     })
+
+    const { register, isLoadingRegister } = useRegisterMutation()
     
     const onSubmit = (values:TypeRegisterSchema) => { 
-        console.log(values)
+        if (recaptchaValue) {
+			register({ values, recaptcha: recaptchaValue })
+		} else {
+			toast.error('Пожалуйста, завершите reCAPTCHA')
+		}
      }
     
     return <AuthWrapper
@@ -38,7 +52,7 @@ export function RegisterForm(){
                     <FormItem>
                         <FormLabel>Имя</FormLabel>
                         <FormControl>
-                            <Input placeholder="Иван" {...field}/>
+                            <Input placeholder="Иван" disabled={isLoadingRegister} {...field}/>
                         </FormControl>
                         <FormMessage/>
                     </FormItem>
@@ -50,7 +64,7 @@ export function RegisterForm(){
                     <FormItem>
                         <FormLabel>Email</FormLabel>
                         <FormControl>
-                            <Input placeholder="ivan@example.com" type="email" {...field}/>
+                            <Input placeholder="ivan@example.com" disabled={isLoadingRegister} type="email" {...field}/>
                         </FormControl>
                         <FormMessage/>
                     </FormItem>
@@ -62,7 +76,7 @@ export function RegisterForm(){
                     <FormItem>
                         <FormLabel>Пароль</FormLabel>
                         <FormControl>
-                            <Input placeholder="*******" type="password" {...field}/>
+                            <Input placeholder="*******" disabled={isLoadingRegister} type="password" {...field}/>
                         </FormControl>
                         <FormMessage/>
                     </FormItem>
@@ -74,13 +88,22 @@ export function RegisterForm(){
                     <FormItem>
                         <FormLabel>Повторите пароль</FormLabel>
                         <FormControl>
-                            <Input placeholder="*******" type="password" {...field}/>
+                            <Input placeholder="*******" disabled={isLoadingRegister} type="password" {...field}/>
                         </FormControl>
                         <FormMessage/>
                     </FormItem>
                 )}
                 />
-                <Button type="submit">
+                <div className='flex justify-center'>
+						<ReCAPTCHA
+							sitekey={
+								process.env.GOOGLE_RECAPTCHA_SITE_KEY as string
+							}
+							onChange={setRecaptchaValue}
+							theme={theme === 'light' ? 'light' : 'dark'}
+						/>
+					</div>
+                <Button type="submit" disabled={isLoadingRegister}>
                 Создать аккаунт
                 </Button>
             </form>
